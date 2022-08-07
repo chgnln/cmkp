@@ -9,7 +9,7 @@
       v-data-iterator(:items="circles" :loading="$apollo.queries.circles.loading" content-tag="v-layout" row wrap hide-actions)
         v-flex(slot="item" slot-scope="props" xs12 sm6 md4 lg3)
           v-card.lighten-5(:to="`/circles/${props.item.id}`" :class="[{'blue': props.item.day === 1}, {'teal': props.item.day === 2}, {'lime': props.item.day === 3}, {'orange': props.item.day === 0}]")
-            v-card-text(text-color="black")
+            v-card-text(:class="black--text")
               div.caption {{ props.item.locationString }}
               div(v-if="props.item.day !== 0") {{ props.item.name }} - {{ props.item.author }}
               div(v-else) {{ props.item.name }}

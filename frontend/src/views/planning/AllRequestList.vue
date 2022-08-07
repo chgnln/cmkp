@@ -21,7 +21,7 @@
           v-card-title.headline.lighten-4(:class="[{'orange': circle.locationType === 1}, {'red': circle.locationType === 2}, {'green': circle.locationType === 0}]")
             router-link(:to="`/circles/${circle.id}`" style="text-decoration: none;") {{ circle.locationString }} {{ circle.name }}
           v-card-text.blue-grey.lighten-5(v-if="circle.prioritized.length > 0")
-            div(v-for="p in circle.prioritized" :key="p.userId" text-color="black")
+            div(v-for="p in circle.prioritized" :key="p.userId" class="black--text")
               | 第{{p.rank}}希望：
               router-link(:to="`/planning/users/${p.userId}`") {{ p.user.displayName }}
           v-divider
