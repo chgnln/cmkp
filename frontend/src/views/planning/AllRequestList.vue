@@ -113,7 +113,7 @@ export default {
   },
   computed: {
     filteredRequests: function () {
-      return this.fetchData.requestedCircles.filter(v => {
+      return this.fetchData.requestedCircles.sort((a, b) => a.locationString < b.locationString ? 1 : -1).filter(v => {
         let ok = true
         switch (v.locationType) {
           case 0:
